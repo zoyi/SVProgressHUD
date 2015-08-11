@@ -1,10 +1,10 @@
-//
-//  SVProgressHUD.h
-//
-//  Copyright 2011-2014 Sam Vermette. All rights reserved.
-//
-//  https://github.com/samvermette/SVProgressHUD
-//
+  //
+  //  SVProgressHUD.h
+  //
+  //  Copyright 2011-2014 Sam Vermette. All rights reserved.
+  //
+  //  https://github.com/samvermette/SVProgressHUD
+  //
 
 #import <UIKit/UIKit.h>
 #import <AvailabilityMacros.h>
@@ -19,10 +19,10 @@ extern NSString * const SVProgressHUDDidAppearNotification;
 extern NSString * const SVProgressHUDStatusUserInfoKey;
 
 typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
-    SVProgressHUDMaskTypeNone = 1,  // allow user interactions while HUD is displayed
-    SVProgressHUDMaskTypeClear,     // don't allow user interactions
-    SVProgressHUDMaskTypeBlack,     // don't allow user interactions and dim the UI in the back of the HUD
-    SVProgressHUDMaskTypeGradient   // don't allow user interactions and dim the UI with a a-la-alert-view background gradient
+  SVProgressHUDMaskTypeNone = 1,  // allow user interactions while HUD is displayed
+  SVProgressHUDMaskTypeClear,     // don't allow user interactions
+  SVProgressHUDMaskTypeBlack,     // don't allow user interactions and dim the UI in the back of the HUD
+  SVProgressHUDMaskTypeGradient   // don't allow user interactions and dim the UI with a a-la-alert-view background gradient
 };
 
 @interface SVProgressHUD : UIView
@@ -54,19 +54,23 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
 
 + (void)setStatus:(NSString*)string; // change the HUD loading status while it's showing
 
-// stops the activity indicator, shows a glyph + status, and dismisses HUD a little bit later
+  // stops the activity indicator, shows a glyph + status, and dismisses HUD a little bit later
 + (void)showInfoWithStatus:(NSString *)string;
 + (void)showInfoWithStatus:(NSString *)string maskType:(SVProgressHUDMaskType)maskType;
++ (void)showInfoWithStatus:(NSString *)string maskType:(SVProgressHUDMaskType)maskType autoDisappear:(BOOL)disappear;
 
 + (void)showSuccessWithStatus:(NSString*)string;
 + (void)showSuccessWithStatus:(NSString*)string maskType:(SVProgressHUDMaskType)maskType;
++ (void)showSuccessWithStatus:(NSString*)string maskType:(SVProgressHUDMaskType)maskType autoDisappear:(BOOL)disappear;
 
 + (void)showErrorWithStatus:(NSString *)string;
 + (void)showErrorWithStatus:(NSString *)string maskType:(SVProgressHUDMaskType)maskType;
++ (void)showErrorWithStatus:(NSString *)string maskType:(SVProgressHUDMaskType)maskType autoDisappear:(BOOL)disappear;
 
-// use 28x28 white pngs
+  // use 28x28 white pngs
 + (void)showImage:(UIImage*)image status:(NSString*)status;
 + (void)showImage:(UIImage*)image status:(NSString*)status maskType:(SVProgressHUDMaskType)maskType;
++ (void)showImage:(UIImage*)image status:(NSString*)status maskType:(SVProgressHUDMaskType)maskType autoDisappear:(BOOL)disappear;
 
 + (void)setOffsetFromCenter:(UIOffset)offset;
 + (void)resetOffsetFromCenter;
